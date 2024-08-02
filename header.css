@@ -4,7 +4,10 @@ body{font-size: 1.6rem}
 *{margin: 0;padding: 0;}
 ul li,
 ol li{list-style: none;}
-a{text-decoration: none;color: inherit;}
+#header #nav a {
+  text-decoration: none !important;
+  color: black;
+}
 
 @font-face {
     font-family: 'Pretendard-Regular';     
@@ -37,7 +40,18 @@ a{text-decoration: none;color: inherit;}
     padding: 1rem 3.5rem;
     text-align: center;
 }
-
+#header #nav .inner_menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width:100%;
+  padding-top:1rem;
+  padding-left:1px;
+  display: none;
+  background-color: #fff;
+  z-index: 100;
+}
 #header #nav > .dept1 + .dept1::before {
     content: "";
     position: absolute;
