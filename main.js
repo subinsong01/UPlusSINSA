@@ -1,3 +1,29 @@
+//header
+$(document).ready(function() {
+    var nav = $('#nav');
+
+    // 마우스 over 시
+    nav.mouseenter(function() {
+        $('.inner_menu').stop(true,true).slideDown();
+});
+
+    // 마우스  leave 시
+    nav.mouseleave(function() {
+        $('.inner_menu').slideUp();
+    });
+
+    //dept2 hover시 dept1 active
+    $('.dept1').mouseenter(function() {
+        $(this).children().addClass('active');
+        $(this).siblings().children().removeClass('active')
+    });
+    $('.dept1').mouseleave(function() {
+        $(this).children().removeClass('active');
+    });
+    
+});
+
+//body1
 document.addEventListener("DOMContentLoaded", function() {
     let list = document.querySelector('.list');
     let items = document.querySelectorAll('.item');
@@ -36,3 +62,18 @@ document.addEventListener("DOMContentLoaded", function() {
 
     reloadSlider(); // 초기 슬라이더 로드
 });
+
+//body2 
+function openTab(evt, tabName) {
+    let i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablink");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(tabName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
